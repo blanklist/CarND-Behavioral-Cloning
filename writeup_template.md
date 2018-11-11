@@ -54,23 +54,21 @@ The model.py file contains the code for training and saving the convolution neur
 
 #### 1. An appropriate model architecture has been employed
 
-My model consists of a convolution neural network with 3x3 filter sizes and depths between 32 and 128 (model.py lines 18-24) 
+My model consists of a convolution neural network mimicking the nvidia model found here: ["End-to-End Deep Learning for Self-Driving Cars"](https://devblogs.nvidia.com/deep-learning-self-driving-cars) (model.py lines 40-51) 
 
-The model includes RELU layers to introduce nonlinearity (code line 20), and the data is normalized in the model using a Keras lambda layer (code line 18). 
+The model uses Keras lambda layer (model.py line 41) to normalize the image data. Cropping (model.py line 42) of the top and bottom of each image is used to delete unnecessary data which may disrupt efficient training of the model.
 
 #### 2. Attempts to reduce overfitting in the model
 
-The model contains dropout layers in order to reduce overfitting (model.py lines 21). 
-
-The model was trained and validated on different data sets to ensure that the model was not overfitting (code line 10-16). The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
+The model was trained and validated on images that were flipped on their horizontal (model.py line 22-27). This doubled the dataset and helped to generalize the model. The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
 
 #### 3. Model parameter tuning
 
-The model used an adam optimizer, so the learning rate was not tuned manually (model.py line 25).
+The model used an adam optimizer, so the learning rate was not tuned manually (model.py line 53).
 
 #### 4. Appropriate training data
 
-Training data was chosen to keep the vehicle driving on the road. I used a combination of center lane driving, recovering from the left and right sides of the road ... 
+Training data was chosen to keep the vehicle driving on the road. I used a combination of center-lane driving, driving the course in reverse, and recovering from the sides of the track. 
 
 For details about how I created the training data, see the next section. 
 
