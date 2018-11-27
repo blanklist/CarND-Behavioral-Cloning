@@ -100,28 +100,24 @@ Layer 11: Dense, fully connected, output 1
 
 #### 3. Creation of the Training Set & Training Process
 
-To capture good driving behavior, I first recorded two laps on track one using center lane driving. Here is an example image of center lane driving:
+To capture good driving behavior, I recorded one lap on track one using center lane driving. Here are example images of center lane driving:
 
-![alt text][image2]
+![alt text](https://github.com/blanklist/CarND-Behavioral-Cloning/blob/develop/center_1.jpg "center_1")
+![alt text](https://github.com/blanklist/CarND-Behavioral-Cloning/blob/develop/center_2.jpg "center_2")
 
-I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to .... These images show what a recovery looks like starting from ... :
+I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to correct when it found itself near either side of the road. These images show what a recovery looks like starting from the right:
 
-![alt text][image3]
-![alt text][image4]
-![alt text][image5]
+![alt text](https://github.com/blanklist/CarND-Behavioral-Cloning/blob/develop/from_right_1.jpg "from_right_1")
 
-Then I repeated this process on track two in order to get more data points.
+and from the left:
 
-To augment the data sat, I also flipped images and angles thinking that this would ... For example, here is an image that has then been flipped:
+![alt text](https://github.com/blanklist/CarND-Behavioral-Cloning/blob/develop/from_left_1.jpg "from_left_1")
 
-![alt text][image6]
-![alt text][image7]
+To augment the data sat, I also flipped images and angles thinking that this would help generalize the model. 
 
-Etc ....
+After the collection process, I had approximately 30,000 number of data points. More data points were not necessarily better. I attempted to train the model with more data, specifically with more center lane driving laps, which did not result in a successful run. It was not until I focused on training for the recovery from the left and right side of the track that the model succeeded a complete lap.
+I then preprocessed this data with a normalization step (model.py line 41) and crop the top and bottom of the image (model.py line 42) to remove superfluous data. 
 
-After the collection process, I had X number of data points. I then preprocessed this data by ...
+I finally randomly shuffled the data set and put 20% of the data into a validation set. 
 
-
-I finally randomly shuffled the data set and put Y% of the data into a validation set. 
-
-I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was Z as evidenced by ... I used an adam optimizer so that manually training the learning rate wasn't necessary.
+I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was 4 as evidenced by both testing and validation numbers decreasing for each epoch. I used an adam optimizer so that manually training the learning rate wasn't necessary.
