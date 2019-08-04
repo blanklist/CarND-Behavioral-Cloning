@@ -80,17 +80,17 @@ At the end of the process, the vehicle is able to drive autonomously around the 
 
 The final model architecture (model.py lines 18-24) consisted of a convolution neural network with the following layers and layer sizes:
 
-Layer  1: Lambda normalizes images and defines input shape.
-Layer  2: Cropping layer removes unnecessary data from all images.
-Layer  3: Conv2D 5 x 5 with 24 output layers, stride 2, and RELU activation
-Layer  4: Conv2D 5 x 5 with 36 output layers, stride 2, and RELU activation
-Layer  5: Conv2D 5 x 5 with 48 output layers, stride 2, and RELU activation
-Layer  6: Conv2D 3 x 3 with 64 output layers, and RELU activation
-Layer  7: Conv2D 3 x 3 with 64 output layers, and RELU activation
-Layer  8: Flatten
-Layer  9: Dense, fully connected, output 50
-Layer 10: Dense, fully connected, output 10
-Layer 11: Dense, fully connected, output 1
+Layer  1: Lambda normalizes images and defines input shape.  
+Layer  2: Cropping layer removes unnecessary data from all images.  
+Layer  3: Conv2D 5 x 5 with 24 output layers, stride 2, and RELU activation.  
+Layer  4: Conv2D 5 x 5 with 36 output layers, stride 2, and RELU activation.  
+Layer  5: Conv2D 5 x 5 with 48 output layers, stride 2, and RELU activation.  
+Layer  6: Conv2D 3 x 3 with 64 output layers, and RELU activation.  
+Layer  7: Conv2D 3 x 3 with 64 output layers, and RELU activation.  
+Layer  8: Flatten.  
+Layer  9: Dense, fully connected, output 50.  
+Layer 10: Dense, fully connected, output 10.  
+Layer 11: Dense, fully connected, output 1.  
 
 #### 3. Creation of the Training Set & Training Process
 
