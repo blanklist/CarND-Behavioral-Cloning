@@ -40,6 +40,8 @@ Using the Udacity provided simulator and my drive.py file, the car can be driven
 python drive.py model.h5
 ```
 
+![link to video](https://github.com/blanklist/CarND-Behavioral-Cloning/blob/master/run1.mp4)
+
 #### 3. Submission code is usable and readable
 
 The model.py file contains the code for training and saving the convolution neural network. The file shows the pipeline I used for training and validating the model, and it contains comments to explain how the code works.
